@@ -7,7 +7,7 @@
 .content{
     max-width: 1280px;
     width: 90%;
-    display: flex;
+    margin:0 auto;
 }
 
 .banner-hero-container{
@@ -32,6 +32,22 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.title-description{
+    font-size: 28pt;
+    margin: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.parrafo-description{
+    font-size: 16pt;
+    margin: 5px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .product-container{
@@ -60,6 +76,17 @@
     flex-direction: column;
     margin: 20px auto 40px;
     border-radius: 0.75rem;
+}
+
+.title-product {
+    margin-bottom: 20px;
+    font-size: 28pt;
+}
+
+.parrafo-product {
+    margin-bottom: 15px;
+    font-size: 16pt;
+    text-align: center;
 }
 
 .vitrina-content{
@@ -206,4 +233,79 @@ label {
 
 input:checked + label .img-open {
     transform: rotate(180deg);
+}
+
+/* Estilos específicos para tamaños de pantalla más pequeños */
+
+@media screen and (max-width: 768px) {
+    .title-description {
+        font-size: 24pt;
+    }
+
+    .parrafo-description {
+        font-size: 14pt;
+    }
+
+    .product-container {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .product-img {
+        width: 48%;
+        margin-top: 10px;
+    }
+
+    .info-product {
+        height: auto;
+    }
+
+    .title-product {
+        font-size: 24pt;
+        margin-bottom: 10px;
+    }
+
+    .parrafo-product {
+        margin-bottom: 10px;
+        font-size: 14pt;
+    }
+
+    .vitrina-content {
+        height: auto;
+    }
+
+    .titule-vitrina {
+        margin: 10px;
+        padding: 5px;
+    }
+
+    .container-promotion {
+        .promotion-content {
+            flex-direction: column;
+        }
+
+        .promotion-img {
+            width: 100%;
+            margin: 5px;
+        }
+    }
+
+    .container-card {
+        .cards-content {
+            flex-wrap: wrap;
+        }
+
+        .cards-img {
+            width: 48%;
+            margin: 5px;
+        }
+    }
+
+    .container-faqs {
+        .faq-section {
+            .question {
+                width: 100%;
+            }
+        }
+    }
 }
