@@ -161,6 +161,7 @@
 .container-card {
     display: flex;
     flex-direction: column;
+    width: 95%;
 }
 
 .cards-content {
@@ -244,12 +245,12 @@ input[type="checkbox"] {
 .answer {
     display: none;
     padding: 10px;
-    border: 1px solid #ccc;
     border-top: none;
     font-size: 10pt;
     font-family: var(--font-secundary);
     color: #0072c2;
     font-weight: 500;
+    background: #ffff;
 }
 
 input:checked + label + .answer {
@@ -262,6 +263,7 @@ label {
     background-color: #ffff;
     cursor: pointer;
     position: relative;
+    border-radius: 0.75rem;
 }
 
 .material-symbols-outlined {
@@ -299,12 +301,14 @@ input:checked + label .material-symbols-outlined {
         background: none;
         margin-top: 0;
         height: 100%;
+        width: 100%;
     }
 
     .product-container{
         display: flex;
         justify-content: flex-start; /* Alinear las imágenes al principio */
         overflow-x: auto; /* Permitir el desplazamiento horizontal en dispositivos con muchas imágenes */
+        padding: 8px;
     }
 
     .info-product {
@@ -312,8 +316,7 @@ input:checked + label .material-symbols-outlined {
     }
 
     .product-img{
-        width: 45%;
-        margin: 5px;
+        width: 48%;
     }
 
     .titule-promotion, .titule-cards, .titule-faqs {
@@ -333,12 +336,15 @@ input:checked + label .material-symbols-outlined {
         -webkit-overflow-scrolling: touch; /* Agregar -webkit-overflow-scrolling para un desplazamiento suave en iOS */
     }
 
+    .question {
+        width: 48%; /* Cambiar el ancho al 100% en dispositivos móviles */
+    }
+
     label {
-        font-size: 14pt;
+        font-size: 10pt;
         text-align: left;
         display: flex;
         justify-content: space-between;
-        margin: 5px;
     }
 
     .material-symbols-outlined {
@@ -363,15 +369,16 @@ input:checked + label .material-symbols-outlined {
     label {
         font-size: 8pt;
         text-align: left;
+        width: 93%;
     }
 }
 
-@media screen and (max-width: 540px) {
+/*@media screen and (max-width: 540px) {
     label {
         padding: 20px;
         margin: 10px;
 
     }
-}
+}*/
 
 
