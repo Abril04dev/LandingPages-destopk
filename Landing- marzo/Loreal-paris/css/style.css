@@ -1,33 +1,29 @@
 :root {
-    --color-grid: #f5f5f5;
-    --titule-text:28pt;
-    --parrafo-text:16pt;
+    --color-grid: #f6f6f6;
+    --titule-text: 28pt;
+    --parrafo-text: 16pt;
     --font-principal: "Archivo", sans-serif;
-    --font-secundary:"Montserrat", sans-serif;
-  }
+    --font-secundary: "Montserrat", sans-serif;
+}
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.grid{
-    display: grid;
-    grid-template-columns: repeat(12,1fr);
+.content {
     width: 100%;
     max-width: 1600px;
-    height: 100%;
-    margin: auto;
-    gap: 10px;
     overflow: hidden;
-    align-items: center;
+    display: flex;
+    margin: auto;
 }
+
 
 .banner-hero{
     width: 100%;
     height: auto;
-    grid-column: 1/13;
     margin-top: 20px;
     padding-left: 5px;
     padding-right: 5px;
@@ -38,13 +34,18 @@
     border-radius: 0.75rem;
 }
 
+/* DESCRIPTION */
+
 .description-container{
-    width: 100%;
-    grid-column: 2/12;
+    width: 95%;
+    height: 100%;
     background-color:var(--color-grid) ;
-    border-radius: 0.75rem;
     margin-top: 30px;
     padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
 }
 
 .title-description{
@@ -62,33 +63,41 @@
    
 }
 
+/* PRODUCT */
+
 .content-product{
+    width: 95%;
     height: 400px;
     background: linear-gradient(180deg,#ffff 50%,#f5f5f5 50%); 
     margin-top: 20px;
 }
 
 .product-container{
-    grid-column: 2/12;
     display: flex;
-    width: 100%;
+    width: 95%;
     justify-content: space-evenly;
     align-items: center;
+    margin: 20px auto;
 }
 
-.product-img{
-    width: 30%;
+
+.product-img {
+    width: 30%; /* Ajustar el ancho de las imágenes */
     border-radius: 0.75rem;
+    margin-right: 10px; /* Reducir el margen entre las imágenes */
 }
+
 
 .info-product{
     background: #f5f5f5;
+    width: 95%;
     height: auto;
     padding-bottom: 60px;
 }
 
 .text-info{
-    grid-column: 2/12;
+    display: flex;
+    flex-direction: column;
     text-align: center;
 }
 
@@ -104,72 +113,94 @@
     font-family: var(--font-secundary);
     padding: 10px;
     margin: 10px;
-
 }
 
+/* PROMOTION */
 .container-promotion{
-    margin-top: 20px;
-
+    display: flex;
+    flex-direction: column;
 }
-
 .promotion-content{
-    grid-column: 1 / -1;
-    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
-
 
 .promotion-img{
     width: 49%;
     border-radius: 0.75rem;
+    margin: 5px;
+}
+
+
+.titule-content{
+    font-size: var(--titule-text);
+    font-family: var(--font-principal);
+    text-align: left;
+
 }
 
 .titule-promotion{
+    margin-left: 10px;
+ 
+}
+
+/* TARGETAS PO */
+.titule-content-cards {
+    margin-left: 20px;
+}
+
+.titule-cards {
     font-size: var(--titule-text);
     font-family: var(--font-principal);
+    margin-top: 20px;
     text-align: left;
 }
 
-.titule-content{
-    margin-left: 25px;
-    margin-bottom: -25px;
-
+.container-card {
+    display: flex;
+    flex-direction: column;
 }
 
-.container-card{
-    margin-top: 20px;
-    padding: 15px;
-    background: var(--color-grid);
-
+.cards-content {
+    overflow: hidden;
+    width: 100%; /* Ajusta el ancho del contenedor del slider */
+    margin: auto; /* Centra el contenedor del slider */
 }
 
-.cards-content{
-    grid-column: 1 / -1;
-    margin: 20px;
-
-}
-
-.cards-img{
-    width: 24%;
+.cards-img {
+    width: 24%; /* Ajusta el ancho de las imágenes al 100% del contenedor */
     border-radius: 0.75rem;
-
+    margin: 5px; /* Espaciado entre las imágenes del slider */
 }
 
-.titule-content-cards{
-    margin-left: -25px;
-    margin-bottom: -25px;
-    grid-column: 2 / 5;
-
+.slider-container {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch; /* Propiedad para un desplazamiento suave en iOS */
 }
 
-.titule-cards{
-    font-size: var(--titule-text);
-    font-family: var(--font-principal);
-    margin-top: 20px;
-    margin-left: -75px;
-    text-align: left;
-
+/* Estilos para la barra de desplazamiento */
+.slider-container::-webkit-scrollbar {
+    height: 3px;
+    background: #ededed; /* Color de fondo de la barra de desplazamiento */
 }
 
+/* Estilos para el pulgar (scroll thumb) de la barra de desplazamiento */
+.slider-container::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: #e41a64; /* Cambiar el color del pulgar de la barra de desplazamiento */
+    border-radius: 4px; /* Ajustar el radio de borde del pulgar */
+}
+
+/* Estilos para el pulgar (scroll thumb) al pasar el mouse sobre la barra de desplazamiento */
+.slider-container::-webkit-scrollbar-thumb:hover {
+    background-color: #ff6699; /* Cambiar el color del pulgar al pasar el mouse */
+}
+
+/* FAQS */
 .container-faqs{
     background-color: #f5f5f5;
     display: flex;
@@ -249,84 +280,98 @@ input:checked + label .material-symbols-outlined {
     transform: rotate(180deg);
 }
 
-@media screen and (max-width: 768px) {
-    .description-container{
+
+@media only screen and (max-width: 768px) {
+    .description-container {
         margin: 10px;
-
     }
 
-    .title-description{
+    .title-description {
         font-size: 14pt;
-
     }
-    
-    .parrafo-description{
+
+    .parrafo-description {
         font-size: 10pt;
-
     }
 
+    
     .content-product {
         background: none;
         margin-top: 0;
         height: 100%;
     }
 
-    .info-product{
+    .product-container{
+        display: flex;
+        justify-content: flex-start; /* Alinear las imágenes al principio */
+        overflow-x: auto; /* Permitir el desplazamiento horizontal en dispositivos con muchas imágenes */
+    }
+
+    .info-product {
         display: none;
     }
 
-    .product-container {
+    .product-img{
+        width: 45%;
+        margin: 5px;
+    }
+
+    .titule-promotion, .titule-cards, .titule-faqs {
+        font-size: 14pt;
+    }
+
+    .promotion-img{
+        width: 45%;
+    }
+
+    .cards-img {
+        width: 35%; /* Cambiar el ancho de las imágenes en dispositivos responsivos */
+    }
+
+    .slider-container {
+        overflow-x: auto; /* Cambiar a overflow-x: auto para permitir el desplazamiento horizontal en dispositivos móviles */
+        -webkit-overflow-scrolling: touch; /* Agregar -webkit-overflow-scrolling para un desplazamiento suave en iOS */
+    }
+
+    label {
+        font-size: 14pt;
+        text-align: left;
         display: flex;
-        overflow: hidden;
-        width: 100%;
-    }
-    
-    .product-img {
-        width: 100%;
-        flex-shrink: 0;
-    }
-    
-    @keyframes slideAnimation {
-        0% {
-            transform: translateX(0);
-        }
-        33.33% {
-            transform: translateX(-100%);
-        }
-        66.66% {
-            transform: translateX(-200%);
-        }
-        100% {
-            transform: translateX(0);
-        }
-    }
-    
-    .product-container:hover .product-img {
-        animation: slideAnimation 9s linear infinite;
+        justify-content: space-between;
+        margin: 5px;
     }
 
-    .titule-promotion{
-        font-size: 14pt;
+    .material-symbols-outlined {
+        width: 8%;
     }
 
-    .titule-content-cards{
-        margin-left:-11px;
-        grid-column: 2 / 12;
-    }
-
-    .titule-cards{
-        font-size: 14pt;
-    }
-
-    .titule-faqs{
-        font-size: 14pt;
-    }
-
-    label{
-        font-size: 8pt;
-    }
-
-    
- 
-    
 }
+
+@media only screen and (min-width: 769px) {
+    /* Ocultar la barra de desplazamiento en dispositivos de escritorio */
+    .slider-container {
+        scrollbar-width: none; /* Ocultar la barra de desplazamiento en Firefox */
+    }
+
+    /* Ocultar la barra de desplazamiento en dispositivos de escritorio en Chrome y Safari */
+    .slider-container::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 390px) {
+    label {
+        font-size: 8pt;
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    label {
+        padding: 20px;
+        margin: 10px;
+
+    }
+}
+
+
