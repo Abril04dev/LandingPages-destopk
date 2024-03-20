@@ -1,0 +1,350 @@
+:root {
+    --color-grid: #f6f6f6;
+    --titule-text: 24pt;
+    --parrafo-text: 1rem;
+    --font-principal: "Archivo", sans-serif;
+    --font-secundary: "Montserrat", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content {
+    width: 100%;
+    max-width: 1550px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.banner-hero {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.img-hero {
+    width: 100%;
+    border-radius: 0.75rem;
+}
+
+/* DESCRIPTION */
+
+.description-container {
+    width: 95%;
+    height: 100%;
+    background-color: var(--color-grid);
+    margin-top: 30px;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+}
+
+.title-description {
+    text-align: center;
+    font-size: var(--titule-text);
+    font-family: var(--font-principal);
+    margin: 5px;
+    padding: 5px;
+}
+
+.parrafo-description{
+    text-align: justify;
+    font-size:var(--parrafo-text);
+    font-family: var(--font-secundary);
+
+}
+
+.content-description{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    margin: 15px;
+    /*background-color: var(--color-grid);*/
+    border-radius: 0.75rem;
+}
+
+.coleccion-description {
+    text-align: justify;
+    font-size:var(--parrafo-text);
+    font-family: var(--font-principal);
+    margin:20px;
+    font-weight: 900;
+}
+
+
+.content-more-description {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Cambiado a stretch para que ambos divs se estiren para que coincidan en altura */
+}
+
+.section-one,
+.section-two {
+    flex-grow: 1; /* Establece que ambos divs deberían crecer de manera igual para ocupar el espacio disponible */
+    background-color: var(--color-grid);
+    border-radius: 0.75rem;
+    margin: 10px;
+    padding: 15px;
+}
+
+
+.section-parrafo{
+    font-size: var(--parrafo-text);
+    font-family: var(--font-secundary);
+}
+
+/*Product*/
+
+.content-product {
+    display: flex;
+    width: 95%;
+    margin: auto;
+}
+
+.product-container {
+    display: flex;
+    width: 95%;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.product-img {
+    width: 30%;
+    border-radius: 0.75rem;
+}
+
+
+/*Promotion*/
+
+.container-promotion {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.promotion-content {
+    display: flex;
+    width: 100%;
+    gap: 5px;
+    padding: 5px;
+}
+
+.promotion-img {
+    width: calc(100% - 5px);
+    border-radius: 0.75rem;
+}
+
+.titule-content {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 10px;
+}
+
+.titule-promotion {
+    font-size: 24pt;
+    font-family: "Archivo", sans-serif;
+}
+
+/* TARGETAS PO */
+
+.titule-cards {
+    font-size: var(--titule-text);
+    font-family: var(--font-principal);
+    margin-top: 20px;
+    text-align: left;
+}
+
+.container-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.cards-img {
+    width: 24%;
+    border-radius: 0.75rem;
+    margin: 7px;
+}
+
+.cards-slide {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-vitrina{
+    font-size: 24pt;
+    font-family: "Archivo", sans-serif;
+}
+
+@media only screen and (max-width: 768px) {
+    .description-container {
+        margin: 10px;
+    }
+
+    .title-description{
+        font-size: 14pt;
+    }
+
+    .title-vitrina{
+        font-size: 10pt;
+        text-align: center;
+    }
+
+    .parrafo-description,
+    .coleccion-description {
+        font-size: 10pt;
+        width: 90%;
+        margin-top: 10px;
+    }
+
+    .slider-wrapper {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .promotion-content {
+        display: flex;
+        width: 200%;
+        transition: transform 0.5s ease;
+    }
+
+    .slide {
+        width: 50%;
+        float: left;
+    }
+
+    .promotion-img {
+        width: 100%;
+    }
+
+    .dots {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+    }
+
+    .dots label {
+        width: 8px;
+        height: 8px;
+        background-color: #888;
+        border-radius: 50%;
+        cursor: pointer;
+        margin: 0 5px;
+    }
+
+    .dots label:hover {
+        background-color: #555;
+    }
+
+    #slide1:checked~.promotion-content {
+        transform: translateX(0);
+    }
+
+    #slide2:checked~.promotion-content {
+        transform: translateX(-50%);
+    }
+
+    #slide1:checked~.dots label:nth-child(1),
+    #slide2:checked~.dots label:nth-child(2) {
+        background-color: #05881b;
+    }
+
+    .slider-wrapper input[type="radio"] {
+        display: none;
+    }
+
+    .container-promotion {
+        display: block;
+    }
+
+    /* SLIDER PRODUCT */
+    .slider-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .content-product {
+        margin-top: 0;
+        width: 100%;
+        height: 100%;
+        background: none;
+    }
+
+    .product-container {
+        display: flex;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 8px;
+    }
+
+    .product-img {
+        width: 70%;
+        scroll-snap-align: center;
+        padding: 5px;
+    }
+
+    .titule-promotion, .titule-cards {
+        font-size: 14pt;
+    }
+
+    .product-container::-webkit-scrollbar {
+        background-color: #f1f1f1;
+        height: 3px;
+    }
+
+    .product-container::-webkit-scrollbar-thumb {
+        background-color: #05881b;
+        border-radius: 4px;
+    }
+
+    .cards-img {
+        width: 60%;
+    }
+
+    .cards-slide::-webkit-scrollbar {
+        background-color: #f1f1f1;
+        height: 3px;
+    }
+
+    .cards-slide::-webkit-scrollbar-thumb {
+        background-color: #05881b;
+        border-radius: 4px;
+       
+    }
+
+    .content-description{
+        display: none;
+    }
+
+
+}
+
+
+@media only screen and (min-width: 769px) {
+    .slider-wrapper input[type="radio"] {
+        display: none;
+    }
+}
+
+
