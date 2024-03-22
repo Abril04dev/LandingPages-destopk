@@ -248,6 +248,13 @@ input:checked+label .material-symbols-outlined {
     transform: rotate(180deg);
 }
 
+.title-vitrina{
+    margin-top: 20px;
+    padding: 20px;
+    font-size: 18pt;
+    font-family: "Archivo", sans-serif;
+}
+
 @media only screen and (max-width: 768px) {
     .description-container {
         margin: 10px;
@@ -255,6 +262,11 @@ input:checked+label .material-symbols-outlined {
 
     .title-description {
         font-size: 14pt;
+    }
+
+    .title-vitrina{
+        font-size: 10pt;
+        text-align: center;
     }
 
     .parrafo-description {

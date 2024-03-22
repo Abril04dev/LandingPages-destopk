@@ -56,30 +56,29 @@
     padding: 5px;
 }
 
-.parrafo-description{
+.parrafo-description {
     text-align: justify;
-    font-size:var(--parrafo-text);
+    font-size: var(--parrafo-text);
     font-family: var(--font-secundary);
 
 }
 
-.content-description{
+.content-description {
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width:100%;
+    width: 100%;
     margin: 15px;
-    /*background-color: var(--color-grid);*/
     border-radius: 0.75rem;
 }
 
 .coleccion-description {
     text-align: justify;
-    font-size:var(--parrafo-text);
+    font-size: var(--parrafo-text);
     font-family: var(--font-principal);
-    margin:20px;
+    margin: 20px;
     font-weight: 900;
 }
 
@@ -88,12 +87,12 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: stretch; /* Cambiado a stretch para que ambos divs se estiren para que coincidan en altura */
+    align-items: stretch;
 }
 
 .section-one,
 .section-two {
-    flex-grow: 1; /* Establece que ambos divs deberían crecer de manera igual para ocupar el espacio disponible */
+    flex-grow: 1;
     background-color: var(--color-grid);
     border-radius: 0.75rem;
     margin: 10px;
@@ -101,12 +100,12 @@
 }
 
 
-.section-parrafo{
+.section-parrafo {
     font-size: var(--parrafo-text);
     font-family: var(--font-secundary);
 }
 
-/*Product*/
+/*PRODUCT*/
 
 .content-product {
     display: flex;
@@ -123,12 +122,12 @@
 }
 
 .product-img {
-    width: 30%;
+    width: 95%;
     border-radius: 0.75rem;
 }
 
 
-/*Promotion*/
+/*PROMOTION*/
 
 .container-promotion {
     margin-top: 30px;
@@ -176,7 +175,7 @@
 }
 
 .cards-img {
-    width: 24%;
+    width: 95%;
     border-radius: 0.75rem;
     margin: 7px;
 }
@@ -188,21 +187,29 @@
     align-items: center;
 }
 
-.title-vitrina{
+/* VITRINA*/
+
+.title-vitrina h2 {
     font-size: 24pt;
     font-family: "Archivo", sans-serif;
+    text-align: left;
+    padding: 8px;
 }
 
 @media only screen and (max-width: 768px) {
+    .content-description {
+        display: none;
+    }
+
     .description-container {
         margin: 10px;
     }
 
-    .title-description{
+    .title-description {
         font-size: 14pt;
     }
 
-    .title-vitrina{
+    .title-vitrina {
         font-size: 10pt;
         text-align: center;
     }
@@ -243,8 +250,8 @@
     }
 
     .dots label {
-        width: 8px;
-        height: 8px;
+        width: 12px;
+        height: 12px;
         background-color: #888;
         border-radius: 50%;
         cursor: pointer;
@@ -276,35 +283,35 @@
         display: block;
     }
 
-    /* SLIDER PRODUCT */
+    /*SLIDER PRODUCT */
+
     .slider-container {
         display: flex;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
-    }
-
-    .content-product {
-        margin-top: 0;
         width: 100%;
-        height: 100%;
-        background: none;
     }
 
     .product-container {
         display: flex;
-        justify-content: flex-start;
-        overflow-x: auto;
+        justify-content: space-between;
+        width: 300%;
         padding: 8px;
     }
 
-    .product-img {
-        width: 70%;
+    .slider-product {
+        flex: 0 0 70%;
         scroll-snap-align: center;
         padding: 5px;
     }
 
-    .titule-promotion, .titule-cards {
+    .product-img {
+        width: 100%;
+    }
+
+    .titule-promotion,
+    .titule-cards {
         font-size: 14pt;
     }
 
@@ -318,8 +325,24 @@
         border-radius: 4px;
     }
 
+    /* SLIDER CARDS */
+
+    .container-card {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .cards-slide {
+        display: flex;
+        width: calc(100% + -4px);
+    }
+
+    .slider-card {
+        flex: 0 0 calc(50.33% - -70px);
+    }
+
     .cards-img {
-        width: 60%;
+        width: 95%;
     }
 
     .cards-slide::-webkit-scrollbar {
@@ -330,14 +353,8 @@
     .cards-slide::-webkit-scrollbar-thumb {
         background-color: #05881b;
         border-radius: 4px;
-       
+
     }
-
-    .content-description{
-        display: none;
-    }
-
-
 }
 
 
@@ -346,5 +363,3 @@
         display: none;
     }
 }
-
-
